@@ -19,7 +19,7 @@ public class Assignment_1 {
                 count++;
             }
         }
-        System.out.println("\nThere are " + count + " words in the Array that start with a C.\n");
+        System.out.println("\nThere are " + count + " words in the Array that start with a \"C\".\n");
     }
 
     public static void endswithE(String[] arrOne) {
@@ -30,7 +30,7 @@ public class Assignment_1 {
                 count++;
             }
         }
-        System.out.println("\nThere are " + count + " words in the Array that ends with an e.\n");
+        System.out.println("\nThere are " + count + " words in the Array that ends with an \"e\".\n");
     }
 
     public static void nameLengthIs5(String[] arrOne) {
@@ -54,11 +54,21 @@ public class Assignment_1 {
         }
         System.out.println("\nThere are " + count + " cases in the Array that have substring te.\n");
     }
+    public static int maxWordLength(String[] arrOne) {
+        int maxWordLength = 0;
+        for (int i=0; i<arrOne.length; i++) {
+            if (arrOne[i].length() > maxWordLength){
+                maxWordLength = arrOne[i].length();
+            }
+        }
+        return maxWordLength;
+    }
+
     public static void histogram(String[] arrOne) {
 
-        int nameLength = 0;
+        int nameLength = 1;
 
-        while (nameLength < 9) {
+        while (nameLength <= maxWordLength(arrOne)) {
             int wordAmount = 0;
             for (int i=0; i<arrOne.length; i++) {
                 if (arrOne[i].length() == nameLength) {
@@ -71,5 +81,5 @@ public class Assignment_1 {
             nameLength++;
         }
     }
-    
+
 }
